@@ -32,18 +32,15 @@ class ViewController: NSViewController, ClientDelegate {
     }
     
     func setupLDClient() {
-        var builder = LDUserBuilder()
-        builder = builder.withKey("bob@example.com")
-        builder = builder.withFirstName("Bob")
-        builder = builder.withLastName("Loblaw")
+        let builder = LDUserBuilder()
+        builder.key = "bob@example.com"
+        builder.firstName = "Bob"
+        builder.lastName = "Loblaw"
+        builder.customDictionary = ["groups": ["beta_testers"]]
         
-        let groups = ["beta_testers"]
-        builder.withCustomArray("groups", value: groups)
+        let config = LDConfig(mobileKey: MOBILE_KEY)
         
-        let config = LDConfigBuilder()
-        config.withMobileKey(MOBILE_KEY)
-        
-        LDClient.sharedInstance().start(config, userBuilder: builder)
+        LDClient.sharedInstance().start(config, with: builder)
     }
     
     func checkFeatureValue() {
