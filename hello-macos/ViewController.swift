@@ -41,6 +41,7 @@ class ViewController: NSViewController, ClientDelegate {
         let config = LDConfig(mobileKey: MOBILE_KEY)
         
         LDClient.sharedInstance().start(config, with: builder)
+        LDClient.sharedInstance().delegate = self
     }
     
     func checkFeatureValue() {
