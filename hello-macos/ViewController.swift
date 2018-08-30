@@ -9,7 +9,7 @@
 import Cocoa
 
 let MOBILE_KEY = ""
-let FLAG_KEY = ""
+let FLAG_KEY = "my-flag-key"
 
 class ViewController: NSViewController, ClientDelegate {
 
