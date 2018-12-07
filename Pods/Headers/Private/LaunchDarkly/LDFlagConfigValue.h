@@ -1,1 +1,1 @@
-../../../LaunchDarkly/Darkly/LDFlagConfig/LDFlagConfigValue.h
+../../../LaunchDarkly/Darkly/DataModels/LDFlagConfig/LDFlagConfigValue.h

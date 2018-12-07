@@ -1,1 +1,1 @@
-../../../LaunchDarkly/Darkly/LDEventModel.h
+../../../LaunchDarkly/Darkly/DataModels/LDEventModel.h
