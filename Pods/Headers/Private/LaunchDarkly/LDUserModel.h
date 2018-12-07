@@ -1,1 +1,1 @@
-../../../LaunchDarkly/Darkly/LDUserModel.h
+../../../LaunchDarkly/Darkly/DataModels/LDUserModel.h
