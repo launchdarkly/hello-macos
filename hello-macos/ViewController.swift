@@ -8,44 +8,36 @@
 
 import Cocoa
 
-let MOBILE_KEY = ""
-let FLAG_KEY = "my-flag-key"
+class ViewController: NSViewController {
 
-class ViewController: NSViewController, ClientDelegate {
+    let mobileKey = ""
+    let flagKey = "test-flag"
 
     @IBOutlet weak var valueLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        LDClient.sharedInstance().delegate = self
         setupLDClient()
         checkFeatureValue()
-
     }
 
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-    
     func setupLDClient() {
-        let builder = LDUserBuilder()
-        builder.key = "bob@example.com"
-        builder.firstName = "Bob"
-        builder.lastName = "Loblaw"
-        builder.customDictionary = ["groups": ["beta_testers"]]
-        
-        let config = LDConfig(mobileKey: MOBILE_KEY)
-        
-        LDClient.sharedInstance().start(config, with: builder)
-        LDClient.sharedInstance().delegate = self
+        var user = LDUser(key: "bob@example.com")
+        user.firstName = "Bob"
+        user.lastName = "Loblaw"
+        user.custom = ["groups": ["beta_testers"]]
+
+        let config = LDConfig()
+
+        LDClient.shared.observe(key: flagKey, owner: self) { [weak self] (changedFlag) in
+            self?.featureFlagDidUpdate(changedFlag.key)
+        }
+        LDClient.shared.start(mobileKey: mobileKey, config: config, user: user)
     }
     
     func checkFeatureValue() {
-        let showFeature = LDClient.sharedInstance().boolVariation(FLAG_KEY, fallback: false)
+        let showFeature = LDClient.shared.variation(forKey: flagKey, fallback: false)
         updateLabel(value: "\(showFeature)")
     }
     
@@ -56,7 +48,7 @@ class ViewController: NSViewController, ClientDelegate {
     //MARK: - ClientDelegate Methods
     
     func featureFlagDidUpdate(_ key: String!) {
-        if key == FLAG_KEY {
+        if key == flagKey {
             checkFeatureValue()
         }
     }
