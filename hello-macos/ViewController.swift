@@ -8,10 +8,9 @@
 
 import Cocoa
 
-let MOBILE_KEY = ""
-let FLAG_KEY = "my-flag-key"
-
 class ViewController: NSViewController, ClientDelegate {
+    let mobileKey = ""
+    let flagKey = "test-flag"
 
     @IBOutlet weak var valueLabel: NSTextField!
     
@@ -38,14 +37,14 @@ class ViewController: NSViewController, ClientDelegate {
         builder.lastName = "Loblaw"
         builder.customDictionary = ["groups": ["beta_testers"]]
         
-        let config = LDConfig(mobileKey: MOBILE_KEY)
+        let config = LDConfig(mobileKey: mobileKey)
         
         LDClient.sharedInstance().start(config, with: builder)
         LDClient.sharedInstance().delegate = self
     }
     
     func checkFeatureValue() {
-        let showFeature = LDClient.sharedInstance().boolVariation(FLAG_KEY, fallback: false)
+        let showFeature = LDClient.sharedInstance().boolVariation(flagKey, fallback: false)
         updateLabel(value: "\(showFeature)")
     }
     
