@@ -55,8 +55,8 @@ class ViewController: NSViewController, ClientDelegate {
     
     //MARK: - ClientDelegate Methods
     
-    func featureFlagDidUpdate(_ key: String!) {
-        if key == FLAG_KEY {
+    func featureFlagDidUpdate(_ key: String) {
+        if key == flagKey {
             checkFeatureValue()
         }
     }
