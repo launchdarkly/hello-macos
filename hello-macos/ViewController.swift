@@ -28,12 +28,15 @@ class ViewController: NSViewController {
         user.lastName = "Loblaw"
         user.custom = ["groups": ["beta_testers"]]
 
-        let config = LDConfig()
+        var config = LDConfig(mobileKey: mobileKey)
+        config.eventFlushInterval = 30.0
+//        config.streamingMode = .polling
+//        config.flagPollingInterval = 30.0
 
         LDClient.shared.observe(key: flagKey, owner: self) { [weak self] (changedFlag) in
             self?.featureFlagDidUpdate(changedFlag.key)
         }
-        LDClient.shared.start(mobileKey: mobileKey, config: config, user: user)
+        LDClient.shared.start(config: config, user: user)
     }
     
     func checkFeatureValue() {
