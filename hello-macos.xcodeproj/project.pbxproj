@@ -11,7 +11,7 @@
 		690AFE821E9D1E4D00174601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690AFE811E9D1E4D00174601 /* ViewController.swift */; };
 		690AFE841E9D1E4D00174601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690AFE831E9D1E4D00174601 /* Assets.xcassets */; };
 		690AFE871E9D1E4D00174601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690AFE851E9D1E4D00174601 /* Main.storyboard */; };
-		D4266D248273A6E718A6EE3C /* libPods-hello-macos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6C9049EAAECEE2CC731C0A /* libPods-hello-macos.a */; };
+		714C24D84282C01FE5EC2698 /* libPods-hello-macos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 263AC21C23FE48DD8496E4E4 /* libPods-hello-macos.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		0FBC710E0CFFD35593CB0E50 /* Pods-hello-macos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hello-macos.release.xcconfig"; path = "Pods/Target Support Files/Pods-hello-macos/Pods-hello-macos.release.xcconfig"; sourceTree = "<group>"; };
+		263AC21C23FE48DD8496E4E4 /* libPods-hello-macos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hello-macos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E5A9356F35BB5A481494E8 /* Pods-hello-macos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hello-macos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hello-macos/Pods-hello-macos.debug.xcconfig"; sourceTree = "<group>"; };
 		690AFE7C1E9D1E4D00174601 /* hello-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hello-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		690AFE7F1E9D1E4D00174601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +38,6 @@
 		690AFE911E9D1E4D00174601 /* hello_macosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_macosTests.swift; sourceTree = "<group>"; };
 		690AFE931E9D1E4D00174601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		690AFE9C1E9D1FE100174601 /* hello-macos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hello-macos-Bridging-Header.h"; sourceTree = "<group>"; };
-		CF6C9049EAAECEE2CC731C0A /* libPods-hello-macos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hello-macos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D4266D248273A6E718A6EE3C /* libPods-hello-macos.a in Frameworks */,
+				714C24D84282C01FE5EC2698 /* libPods-hello-macos.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 		5B37A7B6ADB944303100AEE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CF6C9049EAAECEE2CC731C0A /* libPods-hello-macos.a */,
+				263AC21C23FE48DD8496E4E4 /* libPods-hello-macos.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,8 +129,6 @@
 				690AFE781E9D1E4D00174601 /* Sources */,
 				690AFE791E9D1E4D00174601 /* Frameworks */,
 				690AFE7A1E9D1E4D00174601 /* Resources */,
-				1FA482019457CCB347F85A23 /* [CP] Embed Pods Frameworks */,
-				4C5E57AF864D3D253E7C3D30 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,21 +218,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1FA482019457CCB347F85A23 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hello-macos/Pods-hello-macos-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		3DDEDAF1207EA269E449E7BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,21 +234,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4C5E57AF864D3D253E7C3D30 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-hello-macos/Pods-hello-macos-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
