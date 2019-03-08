@@ -30,8 +30,10 @@ class ViewController: NSViewController {
 
         var config = LDConfig(mobileKey: mobileKey)
         config.eventFlushInterval = 30.0
+//        config.backgroundFlagPollingInterval = 60.0
 //        config.streamingMode = .polling
 //        config.flagPollingInterval = 30.0
+        config.enableBackgroundUpdates = true
 
         LDClient.shared.observe(key: flagKey, owner: self) { [weak self] (changedFlag) in
             self?.featureFlagDidUpdate(changedFlag.key)
