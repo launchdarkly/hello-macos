@@ -11,7 +11,7 @@ import Cocoa
 class ViewController: NSViewController {
 
     let mobileKey = ""
-    let flagKey = "test-flag"
+    let flagKey = "hello-ios-boolean"
 
     @IBOutlet weak var valueLabel: NSTextField!
     
