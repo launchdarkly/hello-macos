@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		201EA003E7FB9E632CF6E177 /* Pods_hello_macos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7F0C9B7A657A11B00F81232 /* Pods_hello_macos.framework */; };
 		690AFE801E9D1E4D00174601 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690AFE7F1E9D1E4D00174601 /* AppDelegate.swift */; };
 		690AFE821E9D1E4D00174601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690AFE811E9D1E4D00174601 /* ViewController.swift */; };
 		690AFE841E9D1E4D00174601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690AFE831E9D1E4D00174601 /* Assets.xcassets */; };
 		690AFE871E9D1E4D00174601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690AFE851E9D1E4D00174601 /* Main.storyboard */; };
-		714C24D84282C01FE5EC2698 /* libPods-hello-macos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 263AC21C23FE48DD8496E4E4 /* libPods-hello-macos.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,7 +26,6 @@
 
 /* Begin PBXFileReference section */
 		0FBC710E0CFFD35593CB0E50 /* Pods-hello-macos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hello-macos.release.xcconfig"; path = "Pods/Target Support Files/Pods-hello-macos/Pods-hello-macos.release.xcconfig"; sourceTree = "<group>"; };
-		263AC21C23FE48DD8496E4E4 /* libPods-hello-macos.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hello-macos.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		47E5A9356F35BB5A481494E8 /* Pods-hello-macos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hello-macos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hello-macos/Pods-hello-macos.debug.xcconfig"; sourceTree = "<group>"; };
 		690AFE7C1E9D1E4D00174601 /* hello-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hello-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		690AFE7F1E9D1E4D00174601 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +37,7 @@
 		690AFE911E9D1E4D00174601 /* hello_macosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hello_macosTests.swift; sourceTree = "<group>"; };
 		690AFE931E9D1E4D00174601 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		690AFE9C1E9D1FE100174601 /* hello-macos-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "hello-macos-Bridging-Header.h"; sourceTree = "<group>"; };
+		A7F0C9B7A657A11B00F81232 /* Pods_hello_macos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hello_macos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				714C24D84282C01FE5EC2698 /* libPods-hello-macos.a in Frameworks */,
+				201EA003E7FB9E632CF6E177 /* Pods_hello_macos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 		5B37A7B6ADB944303100AEE7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				263AC21C23FE48DD8496E4E4 /* libPods-hello-macos.a */,
+				A7F0C9B7A657A11B00F81232 /* Pods_hello_macos.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -129,6 +129,7 @@
 				690AFE781E9D1E4D00174601 /* Sources */,
 				690AFE791E9D1E4D00174601 /* Frameworks */,
 				690AFE7A1E9D1E4D00174601 /* Resources */,
+				1FA482019457CCB347F85A23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,6 +219,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1FA482019457CCB347F85A23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hello-macos/Pods-hello-macos-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DarklyEventSource/DarklyEventSource.framework",
+				"${BUILT_PRODUCTS_DIR}/LaunchDarkly/LaunchDarkly.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DarklyEventSource.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LaunchDarkly.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hello-macos/Pods-hello-macos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3DDEDAF1207EA269E449E7BB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
