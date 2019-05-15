@@ -3,5 +3,5 @@ We've built a simple macOS application that demonstrates how LaunchDarkly's SDK 
 ##### Build instructions #####
 1. Make sure you have [XCode](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12) installed
 2. Open `hello-macos.xcworkspace` in XCode
-3. Copy the mobile key from your account settings page and the feature flag key from your LaunchDarkly dashboard into `ViewController.swift`
+3. Copy the mobile key from your account settings page and the feature flag key from your LaunchDarkly dashboard into `AppDelegate.swift`
 4. Run your application through XCode
