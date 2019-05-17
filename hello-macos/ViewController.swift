@@ -10,35 +10,21 @@ import Cocoa
 
 class ViewController: NSViewController {
 
-    let mobileKey = ""
-    let flagKey = "hello-ios-boolean"
+    let flagKey = "test-flag"
 
     @IBOutlet weak var valueLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupLDClient()
+        registerLDClientObservers()
         checkFeatureValue()
     }
 
-    func setupLDClient() {
-        var user = LDUser(key: "bob@example.com")
-        user.firstName = "Bob"
-        user.lastName = "Loblaw"
-        user.custom = ["groups": ["beta_testers"]]
-
-        var config = LDConfig(mobileKey: mobileKey)
-        config.eventFlushInterval = 30.0
-//        config.backgroundFlagPollingInterval = 60.0
-//        config.streamingMode = .polling
-//        config.flagPollingInterval = 30.0
-        config.enableBackgroundUpdates = true
-
+    func registerLDClientObservers() {
         LDClient.shared.observe(key: flagKey, owner: self) { [weak self] (changedFlag) in
             self?.featureFlagDidUpdate(changedFlag.key)
         }
-        LDClient.shared.start(config: config, user: user)
     }
     
     func checkFeatureValue() {
