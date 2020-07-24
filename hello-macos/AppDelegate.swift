@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  hello-macos
 //
-//  Created by Danial Zahid on 4/11/17.
 //  Copyright © 2017 LaunchDarkly. All rights reserved.
 //
 
@@ -18,6 +17,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
 
         setupLDClient()
+        if let viewController = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
+            viewController.onApplicationStarted()
+        }
     }
 
     func setupLDClient() {
@@ -30,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         config.flagPollingInterval = 30.0
         config.enableBackgroundUpdates = true
 
-        LDClient.shared.start(config: config, user: user)
+        LDClient.start(config: config, user: user)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

@@ -2,33 +2,31 @@
 //  ViewController.swift
 //  hello-macos
 //
-//  Created by Danial Zahid on 4/11/17.
 //  Copyright © 2017 LaunchDarkly. All rights reserved.
 //
 
 import Cocoa
+import LaunchDarkly
 
 class ViewController: NSViewController {
 
     let flagKey = "test-flag"
 
     @IBOutlet weak var valueLabel: NSTextField!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
 
+    func onApplicationStarted() {
         registerLDClientObservers()
         checkFeatureValue()
     }
 
     func registerLDClientObservers() {
-        LDClient.shared.observe(key: flagKey, owner: self) { [weak self] (changedFlag) in
+        LDClient.get()!.observe(key: flagKey, owner: self) { [weak self] changedFlag in
             self?.featureFlagDidUpdate(changedFlag.key)
         }
     }
     
     func checkFeatureValue() {
-        let showFeature = LDClient.shared.variation(forKey: flagKey, fallback: false)
+        let showFeature = LDClient.get()!.variation(forKey: flagKey, defaultValue: false)
         updateLabel(value: "\(showFeature)")
     }
     
