@@ -11,7 +11,7 @@
 		690AFE821E9D1E4D00174601 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690AFE811E9D1E4D00174601 /* ViewController.swift */; };
 		690AFE841E9D1E4D00174601 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 690AFE831E9D1E4D00174601 /* Assets.xcassets */; };
 		690AFE871E9D1E4D00174601 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 690AFE851E9D1E4D00174601 /* Main.storyboard */; };
-		B46C1C4324CB3FDC00283630 /* LaunchDarkly in Frameworks */ = {isa = PBXBuildFile; productRef = B46C1C4224CB3FDC00283630 /* LaunchDarkly */; };
+		B4DF399025310BB800DB935A /* LaunchDarkly in Frameworks */ = {isa = PBXBuildFile; productRef = B4DF398F25310BB800DB935A /* LaunchDarkly */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,7 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B46C1C4324CB3FDC00283630 /* LaunchDarkly in Frameworks */,
+				B4DF399025310BB800DB935A /* LaunchDarkly in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +80,7 @@
 			);
 			name = "hello-macos";
 			packageProductDependencies = (
-				B46C1C4224CB3FDC00283630 /* LaunchDarkly */,
+				B4DF398F25310BB800DB935A /* LaunchDarkly */,
 			);
 			productName = "hello-macos";
 			productReference = 690AFE7C1E9D1E4D00174601 /* hello-macos.app */;
@@ -113,7 +113,7 @@
 			);
 			mainGroup = 690AFE731E9D1E4D00174601;
 			packageReferences = (
-				B46C1C4124CB3FDC00283630 /* XCRemoteSwiftPackageReference "ios-client-sdk" */,
+				B4DF398E25310BB800DB935A /* XCRemoteSwiftPackageReference "ios-client-sdk" */,
 			);
 			productRefGroup = 690AFE7D1E9D1E4D00174601 /* Products */;
 			projectDirPath = "";
@@ -329,20 +329,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		B46C1C4124CB3FDC00283630 /* XCRemoteSwiftPackageReference "ios-client-sdk" */ = {
+		B4DF398E25310BB800DB935A /* XCRemoteSwiftPackageReference "ios-client-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/launchdarkly/ios-client-sdk.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.1;
+				kind = upToNextMinorVersion;
+				minimumVersion = 5.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B46C1C4224CB3FDC00283630 /* LaunchDarkly */ = {
+		B4DF398F25310BB800DB935A /* LaunchDarkly */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B46C1C4124CB3FDC00283630 /* XCRemoteSwiftPackageReference "ios-client-sdk" */;
+			package = B4DF398E25310BB800DB935A /* XCRemoteSwiftPackageReference "ios-client-sdk" */;
 			productName = LaunchDarkly;
 		};
 /* End XCSwiftPackageProductDependency section */
