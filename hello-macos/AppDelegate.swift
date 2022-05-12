@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to initialize your application
 
         setupLDClient()
-        if let viewController = NSApplication.shared.mainWindow?.contentViewController as? ViewController {
+        if let viewController = NSApp.windows.first?.contentViewController as? ViewController {
             viewController.onApplicationStarted()
         }
     }
