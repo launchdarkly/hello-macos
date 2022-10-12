@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/launchdarkly/ios-client-sdk.git",
       "state" : {
-        "revision" : "ee405084c5e06f7f0caa3c13bccc997f3574cbf3",
-        "version" : "6.2.0"
+        "revision" : "aea0cbf78fbc46490aa32da9d85e6e5d562e3dbb",
+        "version" : "7.0.0"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/LaunchDarkly/swift-eventsource.git",
       "state" : {
-        "revision" : "e642325895537dfe0d72fdf2df62ae0f9ddc1e35",
-        "version" : "2.0.0"
+        "revision" : "aa03131eb30bbc35513153609ed65209853603a7",
+        "version" : "3.0.0"
       }
     }
   ],
