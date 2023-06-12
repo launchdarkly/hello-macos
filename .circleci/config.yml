@@ -26,6 +26,9 @@ jobs:
     steps:
     - checkout
 
+    # xcode does not like using ssh for some reason
+    - run: 'git config --global --unset url."ssh://git@github.com".insteadOf "https://github.com"'
+
     - run:
         name: Make Output Directory
         command: mkdir -p 'artifacts'
