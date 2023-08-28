@@ -31,7 +31,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard case .success(let context) = contextBuilder.build()
         else { return }
 
-        var config = LDConfig(mobileKey: launchDarklyMobileKey)
+        var config = LDConfig(mobileKey: launchDarklyMobileKey, autoEnvAttributes: .enabled)
         config.flagPollingInterval = 30.0
         config.enableBackgroundUpdates = true
         config.eventFlushInterval = 30.0
