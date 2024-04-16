@@ -1,12 +1,13 @@
 {
+  "originHash" : "5dfcdeb61541ed6a3b745c9c3541a4c3b2417a1d63a7ab81046871a35c646347",
   "pins" : [
     {
       "identity" : "ios-client-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/launchdarkly/ios-client-sdk.git",
       "state" : {
-        "revision" : "4e535facdbd2682da9453c78c5a5ff75bb2ef7cc",
-        "version" : "9.0.2"
+        "revision" : "a71c356ffb8fc45ff352bddcdf13390128fd40c9",
+        "version" : "9.6.2"
       }
     },
     {
@@ -19,5 +20,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
