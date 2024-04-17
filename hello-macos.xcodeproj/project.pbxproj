@@ -334,7 +334,7 @@
 			repositoryURL = "https://github.com/launchdarkly/ios-client-sdk.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 9.3.0;
+				minimumVersion = 9.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
