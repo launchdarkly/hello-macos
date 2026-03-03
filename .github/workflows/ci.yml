@@ -1,27 +1,26 @@
 name: Build
 on:
-  schedule:
-    # * is a special character in YAML so you have to quote this string
-    - cron:  '0 9 * * *'
   push:
-    branches: [ main, 'feat/**' ]
+    branches: [main, 'feat/**']
     paths-ignore:
-      - '**.md' # Do not need to run CI for markdown changes.
+      - '**.md'
   pull_request:
-    branches: [ main, 'feat/**' ]
+    branches: [main, 'feat/**']
     paths-ignore:
       - '**.md'
 
 jobs:
-  macos-build:
+  build:
     runs-on: macos-14
 
     steps:
-      - uses: actions/checkout@v4
+      # https://github.com/actions/checkout/releases/tag/v4.2.2
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
 
-      - uses: maxim-lobanov/setup-xcode@60606e260d2fc5762a71e64e74b2174e8ea3c8bd
+      # https://github.com/maxim-lobanov/setup-xcode/releases/tag/v1.6.0
+      - uses: maxim-lobanov/setup-xcode@60606e260d2fc5762a71e64e74b2174e8ea3c8bd # v1.6.0
         with:
           xcode-version: 15.4.0
 
       - name: Build hello-macos
-        run: xcodebuild build -scheme 'hello-macos' | xcpretty
+        run: xcodebuild build -scheme 'hello-macos' -workspace 'hello-macos.xcworkspace' | xcpretty
