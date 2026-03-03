@@ -30,11 +30,11 @@ jobs:
 
       - name: Configure SDK mobile key
         run: |
-          sed -i '' "s/let sdkKey = \"\"/let sdkKey = \"$LAUNCHDARKLY_MOBILE_KEY\"/" hello-macos/AppDelegate.swift
+          sed -i '' "s|let sdkKey = \"\"|let sdkKey = \"$LAUNCHDARKLY_MOBILE_KEY\"|" hello-macos/AppDelegate.swift
 
       - name: Configure feature flag key
         run: |
-          sed -i '' "s/let featureFlagKey = \"sample-feature\"/let featureFlagKey = \"$LAUNCHDARKLY_FLAG_KEY\"/" hello-macos/ViewController.swift
+          sed -i '' "s|let featureFlagKey = \"sample-feature\"|let featureFlagKey = \"$LAUNCHDARKLY_FLAG_KEY\"|" hello-macos/ViewController.swift
 
       # https://github.com/maxim-lobanov/setup-xcode/releases/tag/v1.6.0
       - uses: maxim-lobanov/setup-xcode@60606e260d2fc5762a71e64e74b2174e8ea3c8bd # v1.6.0
