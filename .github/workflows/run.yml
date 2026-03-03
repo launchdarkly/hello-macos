@@ -1,0 +1,63 @@
+name: Run
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    branches: [main]
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  run:
+    runs-on: macos-14
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      # https://github.com/actions/checkout/releases/tag/v4.2.2
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      # https://github.com/launchdarkly/gh-actions/releases/tag/release-secrets-v1.2.0
+      - uses: launchdarkly/gh-actions/actions/release-secrets@bbbbbda684f500766264e7fe327668094ba83d1c # release-secrets-v1.2.0
+        name: 'Get mobile key and flag key'
+        with:
+          aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
+          ssm_parameter_pairs: '/sdk/common/hello-apps/mobile-key = LAUNCHDARKLY_MOBILE_KEY,
+            /sdk/common/hello-apps/boolean-flag-key = LAUNCHDARKLY_FLAG_KEY'
+
+      - name: Configure SDK mobile key
+        run: |
+          sed -i '' "s/let sdkKey = \"\"/let sdkKey = \"$LAUNCHDARKLY_MOBILE_KEY\"/" hello-macos/AppDelegate.swift
+
+      - name: Configure feature flag key
+        run: |
+          sed -i '' "s/let featureFlagKey = \"sample-feature\"/let featureFlagKey = \"$LAUNCHDARKLY_FLAG_KEY\"/" hello-macos/ViewController.swift
+
+      # https://github.com/maxim-lobanov/setup-xcode/releases/tag/v1.6.0
+      - uses: maxim-lobanov/setup-xcode@60606e260d2fc5762a71e64e74b2174e8ea3c8bd # v1.6.0
+        with:
+          xcode-version: 15.4.0
+
+      - name: Build hello-macos
+        run: xcodebuild build -scheme 'hello-macos' -workspace 'hello-macos.xcworkspace' -derivedDataPath build | xcpretty
+
+      - name: Run and verify flag evaluation
+        run: |
+          APP_PATH="build/Build/Products/Debug/hello-macos.app"
+          open "$APP_PATH"
+          sleep 15
+
+          WINDOW_TEXT=$(osascript -e '
+            tell application "System Events"
+              tell process "hello-macos"
+                set windowText to value of static text 1 of window 1
+              end tell
+            end tell
+            return windowText
+          ')
+
+          echo "Window text: $WINDOW_TEXT"
+          echo "$WINDOW_TEXT" | grep -o 'feature flag evaluates to true'
