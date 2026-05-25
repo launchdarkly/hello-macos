@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/launchdarkly/ios-client-sdk.git",
       "state" : {
-        "revision" : "34fcbc00251ed5890d26d7d859c3c1385a684030",
-        "version" : "11.1.2"
+        "revision" : "93c519e2aeb12f61faaddf9c77a646ec9b4c3049",
+        "version" : "11.1.3"
       }
     },
     {
