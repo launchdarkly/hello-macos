@@ -24,8 +24,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         guard case .success(let context) = contextBuilder.build()
         else { return }
 
-        var config = LDConfig(mobileKey: sdkKey, autoEnvAttributes: .enabled)
+        let config = LDConfig(mobileKey: sdkKey, autoEnvAttributes: .enabled)
 
-        LDClient.start(config: config, context: context)
+        LDClient.start(config: config, context: context, startWaitSeconds: 10)
     }
 }
