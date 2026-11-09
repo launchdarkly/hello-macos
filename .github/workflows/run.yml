@@ -12,7 +12,7 @@ on:
 
 jobs:
   run:
-    runs-on: macos-14
+    runs-on: macos-15
     permissions:
       id-token: write
       contents: read
@@ -39,7 +39,7 @@ jobs:
       # https://github.com/maxim-lobanov/setup-xcode/releases/tag/v1.6.0
       - uses: maxim-lobanov/setup-xcode@ed7a3b1fda3918c0306d1b724322adc0b8cc0a90 # v1.7.0
         with:
-          xcode-version: 15.4.0
+          xcode-version: 16.4
 
       - name: Build hello-macos
         run: xcodebuild build -scheme 'hello-macos' -workspace 'hello-macos.xcworkspace' -derivedDataPath build | xcpretty
