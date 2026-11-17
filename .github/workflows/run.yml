@@ -21,7 +21,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       # https://github.com/launchdarkly/gh-actions/releases/tag/release-secrets-v1.2.0
-      - uses: launchdarkly/gh-actions/actions/release-secrets@bbbbbda684f500766264e7fe327668094ba83d1c # release-secrets-v1.2.0
+      - uses: launchdarkly/gh-actions/actions/release-secrets@39e06a6826b5f784225cc1e40077204d4306e22c # release-secrets-v1.2.1
         name: 'Get mobile key and flag key'
         with:
           aws_assume_role: ${{ vars.AWS_ROLE_ARN }}
