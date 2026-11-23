@@ -1,7 +1,7 @@
 import Cocoa
 import LaunchDarkly
 
-@NSApplicationMain
+@main
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     // Set sdkKey to your LaunchDarkly mobile key.
